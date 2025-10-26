@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  {{> head title=judul}}
+<body>
+    <div class="background">
+        <div class="rain-container">
+            <div class="raindrop"></div>
+            <div class="raindrop"></div>
+            <div class="raindrop"></div>
+            <div class="raindrop"></div>
+            <div class="raindrop"></div>
+        </div>
+    </div>
+    {{> header}}
+    <main class="dashboard">
+        <div class="search-section">
+            <div class="search-container">
+                <form class="search-form">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" placeholder="Enter a city name..." id="location-input">
+                    <button type="submit" class="search-btn">Search</button>
+                </form>
+                <div class="popular-cities">
+                    <span>Popular: </span>
+                    <button class="city-btn" data-city="London">London</button>
+                    <button class="city-btn" data-city="New York">New York</button>
+                    <button class="city-btn" data-city="Tokyo">Tokyo</button>
+                    <button class="city-btn" data-city="Jakarta">Jakarta</button>
+                </div>
+            </div>
+        </div>
+        <div class="weather-content">
+            <div class="main-weather-card glass-card">
+                <div class="weather-header">
+                    <h2 id="city-name">Singapore</h2>
+                    <p id="city-highlight">Partly cloudy with a chance of rain</p>
+                </div>
+                <div class="weather-main">
+                    <div class="temp-icon">
+                        <i class="fas fa-cloud-sun weather-icon" id="weather-icon"></i>
+                        <span class="temperature" id="temperature">24°C</span>
+                    </div>
+                </div>
+                <div class="weather-details">
+                    <div class="detail-item">
+                        <i class="fas fa-tint"></i>
+                        <span id="humidity">65%</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-wind"></i>
+                        <span id="wind-speed">12 km/h</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-eye"></i>
+                        <span id="visibility">10 km</span>
+                    </div>
+                </div>
+            </div>
+            <div class="side-panels">
+                <div class="panel glass-card">
+                    <h3>Today's Details</h3>
+                    <div class="panel-content">
+                        <div class="detail-row">
+                            <span>Humidity</span>
+                            <span id="humidity-detail">65%</span>
+                        </div>
+                        <div class="detail-row">
+                            <span>Wind Speed</span>
+                            <span id="wind-detail">12 km/h</span>
+                        </div>
+                        <div class="detail-row">
+                            <span>Visibility</span>
+                            <span id="visibility-detail">10 km</span>
+                        </div>
+                        <div class="detail-row">
+                            <span>Pressure</span>
+                            <span id="pressure">1013 hPa</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel glass-card">
+                    <h3>Hourly Forecast</h3>
+                    <div class="panel-content">
+                        <div class="hourly-forecast">
+                            <div class="hour-item">
+                                <span>Now</span>
+                                <i class="fas fa-cloud-sun"></i>
+                                <span>24°C</span>
+                            </div>
+                            <div class="hour-item">
+                                <span>1h</span>
+                                <i class="fas fa-cloud-rain"></i>
+                                <span>23°C</span>
+                            </div>
+                            <div class="hour-item">
+                                <span>2h</span>
+                                <i class="fas fa-sun"></i>
+                                <span>25°C</span>
+                            </div>
+                            <div class="hour-item">
+                                <span>3h</span>
+                                <i class="fas fa-cloud"></i>
+                                <span>22°C</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="error-message" class="error-message"></div>
+    </main>
+    {{> footer}}
+    <script src="/js/app.js"></script>
+</body>
+</html>
