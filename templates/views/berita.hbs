@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="id">
+  {{> head title=judul}}
+  <body>
+    <div class="main-content">
+      {{> header}}
+
+      <section class="card">
+        <h2>Berita Terkini</h2>
+        <form class="filters" method="GET" action="/berita">
+          <input type="text" name="q" placeholder="Kata kunci (mis: technology)" value="{{q}}">
+          <select name="country">
+            <option value="">Semua negara</option>
+            <option value="us" {{#if (eq country "us")}}selected{{/if}}>US</option>
+            <option value="id" {{#if (eq country "id")}}selected{{/if}}>Indonesia</option>
+          </select>
+          <button type="submit">Cari</button>
+        </form>
+
+        {{#if error}}
+          <p class="error">{{error}}</p>
+        {{/if}}
+
+        {{#if articles.length}}
+          <div class="news-grid">
+            {{#each articles}}
+              <article class="news-card">
+                {{#if image}}
+                  <img src="{{image}}" alt="{{title}}" class="news-image" onerror="this.style.display='none'">
+                {{/if}}
+                <h3><a href="{{url}}" target="_blank" rel="noopener">{{title}}</a></h3>
+                <p class="meta">{{source}} — {{published_at}}</p>
+                <p>{{description}}</p>
+              </article>
+            {{/each}}
+          </div>
+        {{else}}
+          <p>Tidak ada berita ditampilkan.</p>
+        {{/if}}
+      </section>
+
+    </div>
+    {{> footer}}
+  </body>
+</html>

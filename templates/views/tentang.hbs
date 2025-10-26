@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+  {{> head title=judul}}
+  <body>
+    <div class="main-content">
+      {{> header}}
+      <section class="card profile">
+        <div class="profile__image">
+          <img class="portrait" src="/img/foto saya.png" alt="Foto profil">
+        </div>
+
+        <div class="profile__content">
+          <h2>Tentang Saya</h2>
+          <p class="subtitle">Profil singkat & kontak</p>
+
+          <ul class="list">
+            <li><strong>Nama:</strong> Afiif Alfarabi</li>
+            <li><strong>NIM:</strong> 23343001</li>
+            <li><strong>Prodi:</strong> Informatika — UNP</li>
+            <li><strong>Minat:</strong> Web Dev, Data Analytics, AI/ML</li>
+            <li><strong>Email:</strong> afiifalfarabi@student.unp.ac.id</li>
+          </ul>
+
+          <div class="tags">
+            <span>JavaScript</span><span>Node.js</span><span>Express</span>
+            <span>MySQL</span><span>Python</span>
+          </div>
+
+          <!-- Social Media Cards -->
+          <div class="social-media">
+            <h3>Connect with me:</h3>
+            <div class="social-cards">
+              <a href="https://www.instagram.com/apiip_04/" target="_blank" class="social-card glass-card">
+                <i class="fab fa-instagram"></i>
+                <span>Instagram</span>
+              </a>
+              <a href="https://github.com/afiiff" target="_blank" class="social-card glass-card">
+                <i class="fab fa-github"></i>
+                <span>GitHub</span>
+              </a>
+              <a href="mailto:afiifalfarabi@student.unp.ac.id" class="social-card glass-card">
+                <i class="fas fa-envelope"></i>
+                <span>Email</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+    {{> footer}}
+  </body>
+</html>
